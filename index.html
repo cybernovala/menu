@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mis Aplicaciones</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      font-size: 22px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      border-top: 1px solid #555;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    @media(min-width: 600px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      nav a {
+        border-top: none;
+        border-right: 1px solid #555;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mis Aplicaciones</h1>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+  </header>
+
+  <nav id="nav">
+    <a href="https://cybernovala.github.io/curriculum-cybernova/" target="_blank">🧾 Currículum Vitae</a>
+    <a href="https://cybernovala.github.io/contrato-laboral/" target="_blank">📄 Contrato Laboral</a>
+  </nav>
+
+  <main style="padding: 20px;">
+    <h2>Bienvenido</h2>
+    <p>Selecciona una aplicación para comenzar.</p>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>
