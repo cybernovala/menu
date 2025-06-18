@@ -126,6 +126,17 @@
       color: #fff;
     }
 
+    .modal button {
+      margin-top: 20px;
+      background-color: #0096c7;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
@@ -172,10 +183,10 @@
     <button onclick="mostrarEjemplos()">📂 Ejemplos y valores de los documentos</button>
 
     <div id="ejemplos" class="ejemplos" style="display: none;">
-      <a href="curriculum.pdf" target="_blank" onclick="mostrarValor('curriculum'); return false;">🧾 Ver ejemplo de Currículum Vitae</a>
-      <a href="contrato.pdf" target="_blank" onclick="mostrarValor('contrato'); return false;">📄 Ver ejemplo de Contrato Laboral</a>
-      <a href="arriendo.pdf" target="_blank" onclick="mostrarValor('arriendo'); return false;">🏠 Ver ejemplo de Contrato de Arriendo</a>
-      <a href="poder.pdf" target="_blank" onclick="mostrarValor('poder'); return false;">📝 Ver ejemplo de Poder Simple</a>
+      <a href="#" onclick="mostrarValor('curriculum'); return false;">🧾 Ver ejemplo de Currículum Vitae</a>
+      <a href="#" onclick="mostrarValor('contrato'); return false;">📄 Ver ejemplo de Contrato Laboral</a>
+      <a href="#" onclick="mostrarValor('arriendo'); return false;">🏠 Ver ejemplo de Contrato de Arriendo</a>
+      <a href="#" onclick="mostrarValor('poder'); return false;">📝 Ver ejemplo de Poder Simple</a>
     </div>
 
     <p style="margin-top: 30px;">
@@ -191,10 +202,13 @@
     <div class="modal-content">
       <span class="close" onclick="cerrarModal()">&times;</span>
       <p id="modal-text"></p>
+      <button id="verEjemploBtn" onclick="verEjemplo()">Ver ejemplo</button>
     </div>
   </div>
 
   <script>
+    let pdfUrl = "";
+
     function mostrarEjemplos() {
       const div = document.getElementById("ejemplos");
       div.style.display = div.style.display === "none" ? "block" : "none";
@@ -205,15 +219,19 @@
       switch (tipo) {
         case 'curriculum':
           mensaje = "🧾 El valor de la impresión es de $1500 con dos copias. Más $100 por hoja extra que quiera imprimir.";
+          pdfUrl = "curriculum.pdf";
           break;
         case 'contrato':
           mensaje = "📄 El valor de la impresión es de $1500 con 3 copias.";
+          pdfUrl = "contrato.pdf";
           break;
         case 'arriendo':
           mensaje = "🏠 El valor de la impresión es de $2500 con 2 copias.";
+          pdfUrl = "arriendo.pdf";
           break;
         case 'poder':
-          mensaje = "📝 El valor de la impresión es de $2500 con 2 copias.";
+          mensaje = "📝 El valor de la impresión es de $1500 con 2 copias.";
+          pdfUrl = "poder.pdf";
           break;
       }
 
@@ -223,6 +241,12 @@
 
     function cerrarModal() {
       document.getElementById("modal").style.display = "none";
+    }
+
+    function verEjemplo() {
+      if (pdfUrl) {
+        window.open(pdfUrl, "_blank");
+      }
     }
 
     window.onclick = function(event) {
