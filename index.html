@@ -166,11 +166,7 @@
 
   <main>
     <p>
-      Servicio exclusivo para la ciudad de Los Ángeles, Región del Biobío.<br><br>
-      Esta app está optimizada para sistemas Android, y solo permite crear y descargar en su móvil un archivo en 
-      formato PDF, el que solamente puede enviar a nuestro correo <strong>bartese823@gmail.com</strong> o 
-      a nuestro WhatsApp <strong>+56966648585</strong> para ser visualizado e impreso en nuestras dependencias ubicadas en:<br>
-      <strong>calle Colo Colo 512, Los Ángeles</strong>.
+      Servicio exclusivo para la ciudad de Los Ángeles, Región del Biobío.
     </p>
 
     <button onclick="mostrarEjemplos()">📂 Ejemplos y valores de los documentos</button>
@@ -181,6 +177,13 @@
       <a href="arriendo.pdf" target="_blank" onclick="mostrarValor('arriendo'); return false;">🏠 Ver ejemplo de Contrato de Arriendo</a>
       <a href="poder.pdf" target="_blank" onclick="mostrarValor('poder'); return false;">📝 Ver ejemplo de Poder Simple</a>
     </div>
+
+    <p style="margin-top: 30px;">
+      Esta app está optimizada para sistemas Android, y solo permite crear y descargar en su móvil un archivo en 
+      formato PDF, el que solamente puede enviar a nuestro correo <strong>bartese823@gmail.com</strong> o 
+      a nuestro WhatsApp <strong>+56966648585</strong> para ser visualizado e impreso en nuestras dependencias ubicadas en:<br>
+      <strong>calle Colo Colo 512, Los Ángeles</strong>.
+    </p>
   </main>
 
   <!-- Modal -->
@@ -214,7 +217,6 @@
           break;
       }
 
-      // Mostrar mensaje en modal
       document.getElementById("modal-text").innerText = mensaje;
       document.getElementById("modal").style.display = "block";
     }
@@ -223,7 +225,6 @@
       document.getElementById("modal").style.display = "none";
     }
 
-    // Cerrar modal si se hace clic fuera del contenido
     window.onclick = function(event) {
       const modal = document.getElementById("modal");
       if (event.target === modal) {
