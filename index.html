@@ -60,7 +60,7 @@
       line-height: 1.6;
     }
 
-    section button {
+    button {
       padding: 10px 20px;
       font-size: 16px;
       background-color: #0077b6;
@@ -68,16 +68,62 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      margin-top: 20px;
     }
 
-    section a {
+    .ejemplos {
+      margin-top: 20px;
+    }
+
+    .ejemplos a {
+      display: block;
+      margin: 10px 0;
       color: #0077b6;
       text-decoration: none;
       font-weight: bold;
     }
 
-    section a:hover {
+    .ejemplos a:hover {
       text-decoration: underline;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #222;
+      color: #fff;
+      margin: 10% auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 500px;
+      font-size: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #fff;
     }
 
     @media (max-width: 600px) {
@@ -99,9 +145,8 @@
         text-align: center;
       }
 
-      section a {
-        display: block;
-        margin: 10px 0;
+      .modal-content {
+        font-size: 18px;
       }
     }
   </style>
@@ -127,44 +172,11 @@
       a nuestro WhatsApp <strong>+56966648585</strong> para ser visualizado e impreso en nuestras dependencias ubicadas en:<br>
       <strong>calle Colo Colo 512, Los Ángeles</strong>.
     </p>
-  </main>
 
-  <section style="text-align: center; padding: 20px;">
     <button onclick="mostrarEjemplos()">📂 Ejemplos y valores de los documentos</button>
 
-    <div id="ejemplos" style="display: none; margin-top: 20px;">
-      <p><a href="curriculum.pdf" target="_blank" onclick="mostrarValor('curriculum')">🧾 Ver ejemplo de Currículum Vitae</a></p>
-      <p><a href="contrato.pdf" target="_blank" onclick="mostrarValor('contrato')">📄 Ver ejemplo de Contrato Laboral</a></p>
-      <p><a href="arriendo.pdf" target="_blank" onclick="mostrarValor('arriendo')">🏠 Ver ejemplo de Contrato de Arriendo</a></p>
-      <p><a href="poder.pdf" target="_blank" onclick="mostrarValor('poder')">📝 Ver ejemplo de Poder Simple</a></p>
-    </div>
-  </section>
-
-  <script>
-    function mostrarEjemplos() {
-      const div = document.getElementById("ejemplos");
-      div.style.display = div.style.display === "none" ? "block" : "none";
-    }
-
-    function mostrarValor(tipo) {
-      let mensaje = "";
-      switch (tipo) {
-        case 'curriculum':
-          mensaje = "🧾 El valor de la impresión es de $1500 con dos copias. Más $100 por hoja extra que quiera imprimir.";
-          break;
-        case 'contrato':
-          mensaje = "📄 El valor de la impresión es de $1500 con 3 copias.";
-          break;
-        case 'arriendo':
-          mensaje = "🏠 El valor de la impresión es de $2500 con 2 copias.";
-          break;
-        case 'poder':
-          mensaje = "📝 El valor de la impresión es de $2500 con 2 copias.";
-          break;
-      }
-      alert(mensaje);
-    }
-  </script>
-
-</body>
-</html>
+    <div id="ejemplos" class="ejemplos" style="display: none;">
+      <a href="curriculum.pdf" target="_blank" onclick="mostrarValor('curriculum'); return false;">🧾 Ver ejemplo de Currículum Vitae</a>
+      <a href="contrato.pdf" target="_blank" onclick="mostrarValor('contrato'); return false;">📄 Ver ejemplo de Contrato Laboral</a>
+      <a href="arriendo.pdf" target="_blank" onclick="mostrarValor('arriendo'); return false;">🏠 Ver ejemplo de Contrato de Arriendo</a>
+      <a href="poder.pdf" target="_blank" onclick="mostrarValor('poder'); return false;">📝 Ver ejemplo de Poder Simple</a_
