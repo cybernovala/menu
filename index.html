@@ -173,6 +173,7 @@
     <a href="https://cybernovala.github.io/contrato/" target="_blank">📄 Contrato Laboral</a>
     <a href="https://cybernovala.github.io/poder/" target="_blank">📝 Poder Simple</a>
     <a href="https://cybernovala.github.io/arriendo/" target="_blank">🏠 Contrato de Arriendo</a>
+    <a href="https://cybernovala.github.io/compraventa/" target="_blank">🚗 Contrato de Compraventa</a>
   </nav>
 
   <main>
@@ -187,6 +188,7 @@
       <a href="#" onclick="mostrarValor('contrato'); return false;">📄 Ver ejemplo de Contrato Laboral</a>
       <a href="#" onclick="mostrarValor('arriendo'); return false;">🏠 Ver ejemplo de Contrato de Arriendo</a>
       <a href="#" onclick="mostrarValor('poder'); return false;">📝 Ver ejemplo de Poder Simple</a>
+      <a href="#" onclick="mostrarValor('compraventa'); return false;">🚗 Ver ejemplo de Compraventa de Vehículo</a>
     </div>
 
     <p style="margin-top: 30px;">
@@ -232,6 +234,10 @@
         case 'poder':
           mensaje = "📝 El valor de la impresión es de $1500 con 2 copias.";
           pdfUrl = "poder.pdf";
+          break;
+        case 'compraventa':
+          mensaje = "🚗 El valor de la impresión es de $2000 con 2 copias.";
+          pdfUrl = "compraventa.pdf";
           break;
       }
 
