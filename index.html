@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aplicaciones Ofimáticas - Cybernova</title>
+  <title>Cybernova Móvil</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
       color: #333;
     }
@@ -15,32 +16,33 @@
     header {
       background-color: #0077b6;
       color: #fff;
-      padding: 20px;
       text-align: center;
+      padding: 10px 5px;
     }
 
     header h1 {
+      font-size: 16px;
       margin: 0;
-      font-size: 24px;
     }
 
     nav {
       display: flex;
-      justify-content: center;
-      gap: 15px;
+      flex-direction: column;
+      align-items: center;
       background-color: #023e8a;
-      flex-wrap: wrap;
+      padding: 5px 0;
     }
 
     nav a {
+      background-color: #0077b6;
       color: white;
       text-decoration: none;
-      padding: 12px 18px;
-      display: inline-block;
-      font-weight: bold;
-      background-color: #0077b6;
-      border-radius: 8px;
-      margin: 10px 0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 5px 0;
+      font-size: 14px;
+      width: 90%;
+      text-align: center;
       transition: background-color 0.3s;
     }
 
@@ -49,105 +51,27 @@
     }
 
     main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      padding: 5px;
       text-align: center;
     }
 
     main p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #0077b6;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .ejemplos {
-      margin-top: 20px;
-    }
-
-    .ejemplos a {
-      display: block;
+      font-size: 12px;
       margin: 10px 0;
-      color: #0077b6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .ejemplos a:hover {
-      text-decoration: underline;
-    }
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .modal-content {
-      background-color: #222;
-      color: #fff;
-      margin: 10% auto;
-      padding: 30px;
-      border: 1px solid #888;
-      width: 90%;
-      max-width: 500px;
-      font-size: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #fff;
-    }
-
-    .modal button {
-      margin-top: 20px;
-      background-color: #0096c7;
-      padding: 10px 15px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      cursor: pointer;
+      line-height: 1.4;
     }
 
     .whatsapp-button {
-      margin-top: 20px;
       background-color: #25d366;
       color: white;
-      font-size: 16px;
+      font-size: 13px;
+      padding: 8px 14px;
       border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
+      border-radius: 6px;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
+      margin: 8px 0;
     }
 
     .whatsapp-button:hover {
@@ -157,30 +81,37 @@
     /* Botón flotante de WhatsApp */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 15px;
+      right: 15px;
       background-color: #25d366;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
     .whatsapp-float img {
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
     }
 
-    .whatsapp-float:hover {
-      background-color: #1ebc59;
-    }
+    @media (min-width: 601px) {
+      nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    @media (max-width: 600px) {
+      nav a {
+        width: auto;
+        margin: 5px;
+      }
+
       header h1 {
         font-size: 20px;
       }
@@ -189,18 +120,8 @@
         font-size: 16px;
       }
 
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        width: 80%;
-        text-align: center;
-      }
-
-      .modal-content {
-        font-size: 18px;
+      .whatsapp-button {
+        font-size: 16px;
       }
     }
   </style>
@@ -208,122 +129,42 @@
 <body>
 
   <header>
-    <h1>Bienvenido al sistema de aplicaciones ofimáticas de Cybernova</h1>
+    <h1>Cybernova · Apps Ofimáticas Móviles</h1>
   </header>
 
   <nav>
-    <a href="https://cybernovala.github.io/curriculum-cybernova/" target="_blank">🧾 Currículum Vitae</a>
+    <a href="https://cybernovala.github.io/curriculum-cybernova/" target="_blank">🧾 Currículum</a>
     <a href="https://cybernovala.github.io/contrato/" target="_blank">📄 Contrato Laboral</a>
     <a href="https://cybernovala.github.io/poder/" target="_blank">📝 Poder Simple</a>
-    <a href="https://cybernovala.github.io/arriendo/" target="_blank">🏠 Contrato de Arriendo</a>
-    <a href="https://cybernovala.github.io/compraventa/" target="_blank">🚗 Contrato de Compraventa</a>
+    <a href="https://cybernovala.github.io/arriendo/" target="_blank">🏠 Arriendo</a>
+    <a href="https://cybernovala.github.io/compraventa/" target="_blank">🚗 Compraventa</a>
   </nav>
 
   <main>
     <p>
-      Servicio exclusivo para la ciudad de Los Ángeles, Región del Biobío.
+      Solo para Los Ángeles, Región del Biobío. Descargue su PDF y envíelo a<br>
+      <strong>bartese823@gmail.com</strong><br>o al WhatsApp <strong>+56966648585</strong>.<br>
+      Impresiones en calle Colo Colo 512.
     </p>
 
-    <button onclick="mostrarEjemplos()">📂 Ejemplos y valores de los documentos</button>
-
-    <div id="ejemplos" class="ejemplos" style="display: none;">
-      <a href="#" onclick="mostrarValor('curriculum'); return false;">🧾 Ver ejemplo de Currículum Vitae</a>
-      <a href="#" onclick="mostrarValor('contrato'); return false;">📄 Ver ejemplo de Contrato Laboral</a>
-      <a href="#" onclick="mostrarValor('arriendo'); return false;">🏠 Ver ejemplo de Contrato de Arriendo</a>
-      <a href="#" onclick="mostrarValor('poder'); return false;">📝 Ver ejemplo de Poder Simple</a>
-      <a href="#" onclick="mostrarValor('compraventa'); return false;">🚗 Ver ejemplo de Compraventa de Vehículo</a>
-    </div>
-
-    <p style="margin-top: 30px;">
-      Esta app está optimizada para sistemas Android, y solo permite crear y descargar en su móvil un archivo en 
-      formato PDF, el que solamente puede enviar a nuestro correo <strong>bartese823@gmail.com</strong> o 
-      a nuestro WhatsApp <strong>+56966648585</strong> para ser visualizado e impreso en nuestras dependencias ubicadas en:<br>
-      <strong>calle Colo Colo 512, Los Ángeles</strong>.
-    </p>
-
-    <!-- Botón WhatsApp dentro del contenido -->
     <a
-      href="https://wa.me/56966648585?text=Hola%20Cybernova,%20tengo%20una%20consulta%20sobre%20las%20aplicaciones%20ofimáticas.%20¿Están%20disponibles%20hoy?"
+      href="https://wa.me/56966648585?text=Hola%20Cybernova,%20tengo%20una%20consulta%20sobre%20las%20aplicaciones%20ofimáticas."
       class="whatsapp-button"
       target="_blank"
     >
-      📱 Consultas directas por WhatsApp
+      📱 Consultar por WhatsApp
     </a>
   </main>
 
-  <!-- Botón flotante con ícono de WhatsApp -->
+  <!-- Botón flotante de WhatsApp -->
   <a
-    href="https://wa.me/56966648585?text=Hola%20Cybernova,%20quisiera%20hacer%20una%20consulta%20sobre%20los%20formularios de la App."
+    href="https://wa.me/56966648585?text=Hola%20Cybernova,%20quisiera%20hacer%20una%20consulta."
     class="whatsapp-float"
     target="_blank"
     title="Enviar mensaje por WhatsApp"
   >
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
   </a>
-
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="cerrarModal()">&times;</span>
-      <p id="modal-text"></p>
-      <button id="verEjemploBtn" onclick="verEjemplo()">Ver ejemplo</button>
-    </div>
-  </div>
-
-  <script>
-    let pdfUrl = "";
-
-    function mostrarEjemplos() {
-      const div = document.getElementById("ejemplos");
-      div.style.display = div.style.display === "none" ? "block" : "none";
-    }
-
-    function mostrarValor(tipo) {
-      let mensaje = "";
-      switch (tipo) {
-        case 'curriculum':
-          mensaje = "🧾 El valor de la impresión es de $1500 con dos copias. Más $100 por hoja extra que quiera imprimir.";
-          pdfUrl = "curriculum.pdf";
-          break;
-        case 'contrato':
-          mensaje = "📄 El valor de la impresión es de $1500 con 3 copias.";
-          pdfUrl = "contrato.pdf";
-          break;
-        case 'arriendo':
-          mensaje = "🏠 El valor de la impresión es de $2500 con 2 copias.";
-          pdfUrl = "arriendo.pdf";
-          break;
-        case 'poder':
-          mensaje = "📝 El valor de la impresión es de $1500 con 2 copias.";
-          pdfUrl = "poder.pdf";
-          break;
-        case 'compraventa':
-          mensaje = "🚗 El valor de la impresión es de $3500 con 2 copias.";
-          pdfUrl = "compraventa.pdf";
-          break;
-      }
-
-      document.getElementById("modal-text").innerText = mensaje;
-      document.getElementById("modal").style.display = "block";
-    }
-
-    function cerrarModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-
-    function verEjemplo() {
-      if (pdfUrl) {
-        window.open(pdfUrl, "_blank");
-      }
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("modal");
-      if (event.target === modal) {
-        cerrarModal();
-      }
-    }
-  </script>
 
 </body>
 </html>
