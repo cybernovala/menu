@@ -137,6 +137,46 @@
       cursor: pointer;
     }
 
+    .whatsapp-button {
+      margin-top: 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1ebc59;
+    }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      font-size: 24px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebc59;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 20px;
@@ -197,7 +237,26 @@
       a nuestro WhatsApp <strong>+56966648585</strong> para ser visualizado e impreso en nuestras dependencias ubicadas en:<br>
       <strong>calle Colo Colo 512, Los Ángeles</strong>.
     </p>
+
+    <!-- Botón WhatsApp dentro del contenido -->
+    <a
+      href="https://wa.me/56966648585?text=Hola%20Cybernova,%20tengo%20una%20consulta%20sobre%20las%20aplicaciones%20ofimáticas.%20¿Están%20disponibles%20hoy?"
+      class="whatsapp-button"
+      target="_blank"
+    >
+      📱 Consultas directas por WhatsApp
+    </a>
   </main>
+
+  <!-- Botón flotante WhatsApp -->
+  <a
+    href="https://wa.me/56966648585?text=Hola%20Cybernova,%20quisiera%20hacer%20una%20consulta%20sobre%20los%20formularios."
+    class="whatsapp-float"
+    target="_blank"
+    title="Enviar mensaje por WhatsApp"
+  >
+    💬
+  </a>
 
   <!-- Modal -->
   <div id="modal" class="modal">
