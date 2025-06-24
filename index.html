@@ -27,7 +27,7 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 8px; /* Espacio reducido entre botones */
+      gap: 8px;
       background-color: #023e8a;
       flex-wrap: wrap;
       padding: 10px;
@@ -41,7 +41,7 @@
       font-weight: bold;
       background-color: #0077b6;
       border-radius: 8px;
-      margin: 6px 0; /* reducido de 10px a 6px */
+      margin: 3px 0; /* MÁS JUNTOS */
       transition: background-color 0.3s;
     }
 
@@ -88,7 +88,6 @@
       text-decoration: underline;
     }
 
-    /* Modal styles */
     .modal {
       display: none;
       position: fixed;
@@ -155,7 +154,6 @@
       background-color: #1ebc59;
     }
 
-    /* Botón flotante de WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -193,7 +191,6 @@
       nav {
         flex-direction: column;
         align-items: center;
-        padding: 15px 0;
       }
 
       nav a {
@@ -203,11 +200,6 @@
 
       .modal-content {
         font-size: 18px;
-      }
-
-      button, .whatsapp-button {
-        font-size: 15px;
-        width: 100%;
       }
     }
   </style>
@@ -248,7 +240,6 @@
       <strong>calle Colo Colo 512, Los Ángeles</strong>.
     </p>
 
-    <!-- Botón WhatsApp dentro del contenido -->
     <a
       href="https://wa.me/56966648585?text=Hola%20Cybernova,%20tengo%20una%20consulta%20sobre%20las%20aplicaciones%20ofimáticas.%20¿Están%20disponibles%20hoy?"
       class="whatsapp-button"
@@ -258,7 +249,6 @@
     </a>
   </main>
 
-  <!-- Botón flotante con ícono de WhatsApp -->
   <a
     href="https://wa.me/56966648585?text=Hola%20Cybernova,%20quisiera%20hacer%20una%20consulta%20sobre%20los%20formularios de la App."
     class="whatsapp-float"
@@ -268,7 +258,6 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
   </a>
 
-  <!-- Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="cerrarModal()">&times;</span>
